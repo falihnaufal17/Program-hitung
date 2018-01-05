@@ -419,18 +419,53 @@ public class index extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // VOLUME BALOK
     private void volumeBalok11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeBalok11ActionPerformed
         // TODO add your handling code here:
         int p, l, t;
         double v;
-        p = Integer.parseInt(PBalok.getText());
-        l = Integer.parseInt(LBalok.getText());
-        t = Integer.parseInt(TBalok.getText());
+        p = Integer.parseInt(PBalok11.getText());
+        l = Integer.parseInt(LBalok11.getText());
+        t = Integer.parseInt(TBalok11.getText());
         v = p*l*t;
-        hasilBalok.setText("" + v);
+        hasilBalok11.setText("" + v);
     }//GEN-LAST:event_volumeBalok11ActionPerformed
-
+    
+    // VOLUME KUBUS
+    private void volumeKubusActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        float s1, s2, s3, v;
+        s1 = Float.parseFloat(sisi1.getText());
+        s2 = Float.parseFloat(Sisi2.getText());
+        s3 = Float.parseFloat(Sisi3.getText());
+        
+        v = s1 * s2 * s3;
+        hasilKubus.setText("" + v );
+    } 
+    
+    // LUAS SEGITIGA
+    private void luasSegitigaActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        float a, t, L;
+        a = Float.parseFloat(alas.getText());
+        t = Float.parseFloat(tinggi.getText());
+        
+        L = a*t/2;
+        hasilSegitiga.setText(""+L);
+    }
+    
+    // LUAS TRAPESIUM
+    private void LuasTrapesiumActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+        float a, b, L;
+        a = Float.parseFloat(AtasTrapesium.getText());
+        b = Float.parseFloat(BawahTrapesium.getText());
+        
+        L = (a+b)/2;
+        hasilTrapesium.setText("" + L);
+    }
+    
     private void TBalok11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBalok11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TBalok11ActionPerformed
@@ -438,7 +473,58 @@ public class index extends javax.swing.JFrame {
     private void Sisi3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sisi3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Sisi3ActionPerformed
-
+    
+    // FUNGSI RADIO BUTTON TRAPESIUM
+    private void RTrapesiumActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+        if(this.RTrapesium.isSelected()){
+            this.PanelTrapesium.setVisible(true);
+            this.PanelSegitiga.setVisible(false);
+            this.PanelBalok11.setVisible(false);
+            this.panelKubus.setVisible(false);
+        }else{
+            this.PanelTrapesium.setVisible(false);
+        }
+    }
+    
+    // FUNGSI RADIO BUTTON SEGITIGA
+    private void RSegitigaActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        if(this.RSegitiga.isSelected()){
+            this.PanelSegitiga.setVisible(true);
+            this.PanelBalok11.setVisible(false);
+            this.panelKubus.setVisible(false);
+            this.PanelTrapesium.setVisible(false);
+        }else{
+            this.PanelSegitiga.setVisible(false);
+        }
+    }
+    
+    // FUNGSI RADIO BUTTON BALOK
+    private void RBalokActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+        if(!this.RBalok.isSelected()){
+            this.PanelBalok11.setVisible(false);
+        }else{
+            this.PanelBalok11.setVisible(true);
+            this.panelKubus.setVisible(false);
+            this.PanelSegitiga.setVisible(false);
+            this.PanelTrapesium.setVisible(false);
+        }
+    }
+    
+    // FUNGSI RADIO BUTTON KUBUS
+    private void RKubusActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+        if(this.RKubus.isSelected()){
+            this.panelKubus.setVisible(true);
+            this.PanelBalok.setVisible(false);
+            this.PanelSegitiga.setVisible(false);
+            this.PanelTrapesium.setVisible(false);
+        }else{
+            this.panelKubus.setVisible(false);
+        }
+    }
     /**
      * @param args the command line arguments
      */
